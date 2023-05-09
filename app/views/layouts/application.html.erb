@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Base Rails</title>
+    <title>Jobster</title>
     <%= csrf_meta_tags %>
 
     <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
@@ -13,9 +13,93 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
 
+    <style>
+
+        html{
+          min-height:100%;
+          height: fit-content;
+        }
+
+        body{
+          min-height:100%;
+          height: fit-content;
+          padding-left: 0px;
+          box-sizing: border-box;
+          font-family: Sans-Serif;
+          margin:0px;
+          background-color: rgb(255, 255, 255);
+        }
+        
+        .banner{
+          display: flex;
+          padding-left: 100px;
+          padding-right: 100px;
+          background-color: rgb(50, 50, 50);
+          align-items: center;           
+        }    
+
+        .item{
+          margin-left: 10px;
+          margin-right: 10px;
+          padding-bottom: 20px;
+          padding-top: 20px;
+          box-sizing: border-box;
+          color: rgb(255, 255, 255)
+        }
+
+        .right{
+          margin-left: auto;
+        }
+
+        .menu_link{
+          padding-bottom: 20px;
+          padding-top: 20px;
+          box-sizing: border-box;
+          text-decoration: none;
+          color: rgb(200, 200, 200);
+          transition: 0.5s;
+          
+        }
+
+        .menu_link:hover{
+          color: rgb(255, 255, 255);
+          
+        }
+
+        .thumbnail{
+          width: 20px;
+          height: 20px;
+          
+        }
+
+        .site{
+          padding-left: 200px;
+          padding-right: 200px;
+          padding-top: 30px;
+        }
+
+      </style>
+
   </head>
 
   <body>
-    <%= yield %>
+
+    <nav class = "banner">
+        
+        <div class = "item">Jobster</div>
+        <div class = "item"><a href = "/index" class = "menu_link">My applications<a></div>
+
+        <div class = "item right"><a href = "/index" class = "menu_link">Log in<a></div>
+        <div class = "item"><a href = "/index" class = "menu_link">Sign up<a></div>
+        <div class = "item"><a href = "/index" class = "menu_link">Log out<a></div>
+        <div class = "item"><a href = "/index" class = "menu_link">Username<a></div>
+        <div class = "item"><img class = "thumbnail" src = "user.png"> </img></div>
+        
+    </nav>
+
+    <div class = "site">
+      <%= yield %>
+    <div class = "site">
+
   </body>
 </html>
